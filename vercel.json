@@ -1,0 +1,14 @@
+
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://upcoming-decimal-midlands-lifestyle.trycloudflare.com/api/:path*"
+    },
+    {
+      "source": "/health",
+      "destination": "https://upcoming-decimal-midlands-lifestyle.trycloudflare.com/health"
+    }
+  ]
+}
