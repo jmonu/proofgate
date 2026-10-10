@@ -1,0 +1,8 @@
+node_modules
+private
+cryptography/build
+frontend/dist
+package-lock.json
+test-results
+playwright-report
+database/migrations

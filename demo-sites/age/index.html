@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Afterhours · ProofGate demo</title>
+    <link rel="stylesheet" href="/demo.css" />
+    <script src="/proofgate.js" defer></script>
+    <script src="/demo.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <strong>afterhours<span aria-hidden="true"> ✳</span></strong
+      ><a href="http://localhost:5174">Your wallet ↗</a>
+    </nav>
+    <main>
+      <span class="tag">Independent demo website · 01</span>
+      <h1>Your next experience.<br />Just for grown-ups.</h1>
+      <p>
+        Prove you’re at least 18. Keep your birthday, name, and personal
+        documents to yourself.
+      </p>
+      <div class="details">
+        <section>
+          <h3>One thing we need</h3>
+          <p>
+            A zero-knowledge proof that an active demo credential meets the 18+
+            requirement.
+          </p>
+        </section>
+        <section>
+          <h3>Everything you keep private</h3>
+          <p>
+            Your date of birth, exact age, email, name, and original documents
+            stay in ProofGate.
+          </p>
+        </section>
+      </div>
+      <button id="continue">Continue with ProofGate →</button>
+      <p id="status" role="status"></p>
+      <section id="receipt" hidden>
+        <h2>What this website received</h2>
+        <pre id="result"></pre>
+        <button id="logout">End website session</button>
+      </section>
+      <footer>
+        Hackathon demonstration. Demo-issued credentials are test assertions,
+        not authoritative age verification.
+      </footer>
+    </main>
+  </body>
+</html>

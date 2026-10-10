@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Campus Collective · ProofGate demo</title>
+    <link rel="stylesheet" href="/demo.css" />
+    <script src="/proofgate.js" defer></script>
+    <script src="/demo.js" defer></script>
+  </head>
+  <body class="student">
+    <nav>
+      <strong>campus collective ⌘</strong
+      ><a href="http://localhost:5174">Your wallet ↗</a>
+    </nav>
+    <main>
+      <span class="tag">Independent demo website · 03</span>
+      <h1>A world of possibilities.<br />Built for your next chapter.</h1>
+      <p>
+        Access the graduate community with a B.Tech test credential. Your
+        certificate stays in your private wallet.
+      </p>
+      <div class="details">
+        <section>
+          <h3>Qualification, verified selectively</h3>
+          <p>
+            The gateway validates an active, signed demo credential and shares
+            only the B.Tech qualification claim.
+          </p>
+        </section>
+        <section>
+          <h3>Your document stays yours</h3>
+          <p>
+            We never receive the uploaded file, grades, university, name, or
+            birthday. This flow validates a signed credential, not a ZK
+            education circuit.
+          </p>
+        </section>
+      </div>
+      <button id="continue">Continue with ProofGate →</button>
+      <p id="status" role="status"></p>
+      <section id="receipt" hidden>
+        <h2>What this website received</h2>
+        <pre id="result"></pre>
+        <button id="logout">End website session</button>
+      </section>
+      <footer>
+        Test credentials only. Uploading a certificate does not establish its
+        authenticity or current student enrollment.
+      </footer>
+    </main>
+  </body>
+</html>

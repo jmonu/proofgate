@@ -1,0 +1,110 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+model User {
+  id String @id @default(uuid())
+  emailHash String @unique
+  emailCipher String
+  passwordHash String
+  emailVerified Boolean @default(false)
+  createdAt DateTime @default(now())
+  profile String?
+  sessions Session[]
+  documents Document[]
+  credentials Credential[]
+  audits Audit[]
+  connections Connection[]
+}
+model Session {
+  id String @id
+  userId String
+  user User @relation(fields:[userId], references:[id], onDelete:Cascade)
+  csrf String
+  expiresAt DateTime
+}
+model EmailOtp {
+  userId String @id
+  digest String
+  expiresAt DateTime
+  attempts Int @default(0)
+}
+model Document {
+  id String @id @default(uuid())
+  userId String
+  user User @relation(fields:[userId], references:[id], onDelete:Cascade)
+  category String
+  nameCipher String
+  mime String
+  size Int
+  storageId String @unique
+  scanStatus String
+  createdAt DateTime @default(now())
+  @@unique([userId, category])
+}
+model Credential {
+  id String @id
+  userId String
+  user User @relation(fields:[userId], references:[id], onDelete:Cascade)
+  type String
+  sourceId String?
+  payload String
+  signature String
+  secretCipher String?
+  revokedAt DateTime?
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+  @@index([userId,type])
+}
+model Client {
+  id String @id
+  name String
+  secretHash String
+  origin String
+  redirectUri String
+  claims String
+}
+model Authorization {
+  id String @id @default(uuid())
+  clientId String
+  nonce String @unique
+  state String
+  challenge String
+  claims String
+  redirectUri String
+  asOf Int
+  expiresAt DateTime
+  status String @default("pending")
+  userId String?
+  credentialId String?
+  codeHash String? @unique
+  codeExpiresAt DateTime?
+  resultCipher String?
+  createdAt DateTime @default(now())
+}
+model Connection {
+  id String @id @default(uuid())
+  userId String
+  user User @relation(fields:[userId], references:[id], onDelete:Cascade)
+  clientId String
+  name String
+  connectedAt DateTime @default(now())
+  revokedAt DateTime?
+  @@unique([userId,clientId])
+}
+model Audit {
+  id String @id @default(uuid())
+  userId String
+  user User @relation(fields:[userId], references:[id], onDelete:Cascade)
+  event String
+  website String?
+  claim String?
+  outcome String
+  credentialId String?
+  requestExpiresAt DateTime?
+  createdAt DateTime @default(now())
+  @@index([userId,createdAt])
+}

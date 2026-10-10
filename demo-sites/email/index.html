@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Letterbox · ProofGate demo</title>
+    <link rel="stylesheet" href="/demo.css" />
+    <script src="/proofgate.js" defer></script>
+    <script src="/demo.js" defer></script>
+  </head>
+  <body class="email">
+    <nav>
+      <strong>Letterbox.</strong
+      ><a href="http://localhost:5174">Your wallet ↗</a>
+    </nav>
+    <main>
+      <span class="tag">Independent demo website · 02</span>
+      <h1>A little less noise.<br />A little more you.</h1>
+      <p>
+        Sign in with an email credential. You’ll explicitly approve sharing your
+        email address so we can identify your account.
+      </p>
+      <div class="details">
+        <section>
+          <h3>Explicit email disclosure</h3>
+          <p>
+            We receive your email and its ownership status. This is selective
+            disclosure, not an email zero-knowledge proof.
+          </p>
+        </section>
+        <section>
+          <h3>Honest about ownership</h3>
+          <p>
+            SMTP-verified email proves mailbox access. Development-mode email is
+            labeled unverified, even when a test credential is valid.
+          </p>
+        </section>
+      </div>
+      <button id="continue">Continue with ProofGate →</button>
+      <p id="status" role="status"></p>
+      <section id="receipt" hidden>
+        <h2>What this website received</h2>
+        <pre id="result"></pre>
+        <button id="logout">End website session</button>
+      </section>
+      <footer>
+        Hackathon demonstration. Name, birthday, phone number, and documents are
+        never requested.
+      </footer>
+    </main>
+  </body>
+</html>

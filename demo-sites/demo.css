@@ -1,0 +1,165 @@
+:root {
+  font-family:
+    Inter,
+    Segoe UI,
+    sans-serif;
+  color: #eef2ff;
+  background: #10172a;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav strong {
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+.tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #a5b4fc;
+}
+main {
+  max-width: 980px;
+  padding: 75px 30px;
+  margin: auto;
+}
+h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.06;
+  max-width: 800px;
+  letter-spacing: -3px;
+  margin: 25px 0;
+}
+p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #b5c2da;
+  max-width: 650px;
+}
+button {
+  border: 0;
+  background: #a5b4fc;
+  color: #10172a;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 17px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.5;
+}
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 45px 0;
+}
+.details section,
+#receipt {
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 24px;
+  background: #172138;
+}
+.details h3 {
+  margin-top: 0;
+}
+.details p {
+  font-size: 14px;
+}
+#status {
+  font-weight: 600;
+  color: #86efac;
+}
+#receipt {
+  margin-top: 30px;
+}
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #c7d2fe;
+}
+footer {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 55px;
+}
+body.email {
+  background: #faf8f2;
+  color: #243c36;
+}
+body.email p {
+  color: #557268;
+}
+body.email button {
+  background: #284c3f;
+  color: #fff;
+}
+body.email .details section,
+body.email #receipt {
+  background: #fff;
+  border-color: #d6e1d7;
+}
+body.email pre {
+  color: #284c3f;
+}
+body.email .tag {
+  color: #476958;
+}
+body.student {
+  background: #f2f0ff;
+  color: #252044;
+}
+body.student p {
+  color: #696284;
+}
+body.student button {
+  background: #6954cd;
+  color: white;
+}
+body.student .details section,
+body.student #receipt {
+  background: #fff;
+  border-color: #dad4f0;
+}
+body.student pre {
+  color: #504687;
+}
+body.student .tag {
+  color: #6954cd;
+}
+body.email #status,
+body.student #status {
+  color: #237653;
+}
+@media (max-width: 640px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  main {
+    padding-top: 30px;
+  }
+  h1 {
+    letter-spacing: -1.5px;
+  }
+}
